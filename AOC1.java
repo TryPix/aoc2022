@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class AOC1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		// TODO Auto-generated method stub
 		
 	System.out.println(count(new File("aoc1.txt")));
 
