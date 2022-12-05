@@ -22,7 +22,7 @@ public class AOC5 {
 		for (int i = 0; i < 10; i++) {
 			stacks.add(new Stack<String>());
 		}
-		
+		// Hardcoded
 		String[] s1 = new String[] {"C", "Z", "N", "B", "M", "W", "Q", "V"};
 		String[] s2 = new String[] {"H", "Z", "R", "W", "C", "B"};
 		String[] s3 = new String[] {"F", "Q", "R", "J"};
