@@ -4,11 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class AocTemplate {
+public class AOC6 {
 	public static void main(String[] args) throws FileNotFoundException  {
 		// TODO Auto-generated method stub
 		
-		System.out.println(foo(new File("aoc.txt")));
+		System.out.println(foo(new File("aoc6.txt")));
 
 	}
 	
