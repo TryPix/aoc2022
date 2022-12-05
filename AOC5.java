@@ -81,7 +81,7 @@ public class AOC5 {
 			fin += stacks.get(i).pop();
 		}
 		
-		return fin;
+		return  fin;
 		
 	}
 
