@@ -60,6 +60,7 @@ public class AOC5 {
 			for (int i = 0; i < num; i++) {
 				String popped = stacks.get(from).pop();
 				arr[i] = popped;
+				//Part I
 				//stacks.get(to).push(popped);
 			}
 			
