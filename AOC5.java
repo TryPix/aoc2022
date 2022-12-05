@@ -12,11 +12,11 @@ public class AOC5 {
 	public static void main(String[] args) throws FileNotFoundException  {
 		// TODO Auto-generated method stub
 		
-		System.out.println(foo(new File("aoc5.txt")));
+		System.out.println(stacking(new File("aoc5.txt")));
 
 	}
 	
-	public static String foo(File input) throws FileNotFoundException {
+	public static String stacking(File input) throws FileNotFoundException {
 		
 		List<Stack<String>> stacks = new ArrayList<Stack<String>>();
 		for (int i = 0; i < 10; i++) {
