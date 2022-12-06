@@ -38,10 +38,6 @@ public class AOC6 {
 
 		}
 		
-		
-		
-		
-		
 // PART I
 //		while (count + 4 < text.length()+1) {
 //			String mark = text.substring(count, count+4);
