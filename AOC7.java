@@ -3,16 +3,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.io.PrintStream;
 
 public class AOC7 {
 	public static void main(String[] args) throws FileNotFoundException  {
 		// TODO Auto-generated method stub
 		
-		File input = new File("aoc7.txt");
-		Scanner scan = new Scanner(input);
 		
-		System.out.println(sumDirectories(input));
+		System.out.println(sumDirectories(new File("aoc7.txt")));
 
 	}
 
