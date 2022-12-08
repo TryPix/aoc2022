@@ -8,19 +8,21 @@ public class AOC1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-	System.out.println(count(new File("aoc1.txt")));
+	System.out.println(count(new File("aoc1.txt"), true));
 
 	}
 
-	static int count(File input) throws FileNotFoundException{
+	static int count(File input, boolean part2) throws FileNotFoundException{
 		Scanner scan = new Scanner(input);
-		int max1 = Integer.MIN_VALUE;
-		int max2 = Integer.MIN_VALUE;
-		int max3 = Integer.MIN_VALUE;
+		int max1, max2, max3;
+		max1 = max2 = max3 = Integer.MIN_VALUE;
 		int c = 0;
+		String line;
+		
+		
 		while(scan.hasNextLine()) {
-			String a = scan.nextLine();
-			Scanner lineScan = new Scanner(a);
+			line = scan.nextLine();
+			Scanner lineScan = new Scanner(line);
 			if (lineScan.hasNextInt()) {
 				c += lineScan.nextInt();
 			} else {
@@ -39,8 +41,12 @@ public class AOC1 {
 			lineScan.close();
 		}
 	scan.close();
-	return max1 + max2 + max3;
-		
+	if (part2) {
+		return max1 + max2 + max3;
+	}
+	
+	return max1;
+
 	}
 
 }
