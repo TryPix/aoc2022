@@ -1,15 +1,16 @@
-
+package day1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class AOC1 {
+public class CalorieCounting {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		
-	System.out.println(count(new File("aoc1.txt"), true));
-
+	
+	File in = new File("day1/input.txt");
+	System.out.println("Part 1: " + count(in, false));
+	System.out.println("Part 2: " + count(in, true));
 	}
 
 	static int count(File input, boolean part2) throws FileNotFoundException{
@@ -18,7 +19,6 @@ public class AOC1 {
 		max1 = max2 = max3 = Integer.MIN_VALUE;
 		int c = 0;
 		String line;
-		
 		
 		while(scan.hasNextLine()) {
 			line = scan.nextLine();
