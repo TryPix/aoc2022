@@ -21,8 +21,9 @@ public class AOC7 {
 		Scanner scan = new Scanner(input);
 		
 		
-		List<String> directories = new ArrayList<String>();
-		Map<String, Integer> sums = new LinkedHashMap<String, Integer>();
+		List<String> directories = new ArrayList<>();
+		Map<String, Integer> sums = new LinkedHashMap<>();
+		
 		sums.put("/", 0);
 		
 		while(scan.hasNextLine()) {

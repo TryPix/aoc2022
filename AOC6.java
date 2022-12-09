@@ -1,5 +1,3 @@
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -34,8 +32,6 @@ public class AOC6 {
 			}
 			set.clear();
 			count++;
-			
-
 		}
 		
 // PART I

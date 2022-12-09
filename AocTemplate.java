@@ -7,11 +7,11 @@ public class AocTemplate {
 	public static void main(String[] args) throws FileNotFoundException  {
 		// TODO Auto-generated method stub
 		
-		System.out.println(foo(new File("aoc.txt")));
+		System.out.println(foo(new File("aoc.txt"), false));
 
 	}
 	
-	public static int foo(File input) throws FileNotFoundException {
+	public static int foo(File input, boolean part2) throws FileNotFoundException {
 		
 		
 		Scanner scan = new Scanner(input);
@@ -25,6 +25,10 @@ public class AocTemplate {
 		}
 		
 		scan.close();
+		
+		if (part2) {
+			return -1;
+		}
 		
 		return -1;
 		

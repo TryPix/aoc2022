@@ -1,6 +1,5 @@
 package day2;
 
-
 import java.util.*;
 import java.io.*;
 
@@ -8,7 +7,7 @@ public class RockPaperScissors {
 
 	public static void main(String[] args)throws FileNotFoundException  {
 		
-		File in = new File("day2/aoc2.txt");
+		File in = new File("day2/input.txt");
 		System.out.println("Part 1: " + points(in, false));
 		System.out.println("Part 2: " + points(in, true));
 
@@ -18,21 +17,13 @@ public class RockPaperScissors {
 		Scanner scan = new Scanner(input);
 		int pts = 0;
 		int pts2 = 0;
-		Map<String, Integer> rps = new HashMap<>();
-		rps.put("X", 1); rps.put("Y", 2); rps.put("Z", 3);
-		
-		Map<String, String> beats = new HashMap<>();
-		beats.put("X", "C"); beats.put("Y", "A"); beats.put("Z", "B");  
-		
-		Map<String, String> draws = new HashMap<>();
-		draws.put("X", "A"); draws.put("Y", "B"); draws.put("Z", "C");  
 		
 		while (scan.hasNextLine()) {
 			String a = scan.nextLine();
 			Scanner lineScan = new Scanner(a);
 			String opp = lineScan.next();
 			String yours = lineScan.next();
-			pts += ptsRound(opp, yours,rps, beats, draws);
+			pts += ptsRound(opp, yours);
 			pts2 += ptsRound2(opp, yours);
 		lineScan.close();
 		}
@@ -45,7 +36,20 @@ public class RockPaperScissors {
 	}
 	
 	
-	public static int ptsRound(String opp, String yours, Map<String, Integer> rps, Map<String, String> beats, Map<String, String> draws) {
+	public static int ptsRound(String opp, String yours) {
+		Map<String, Integer> rps = new HashMap<>();
+		rps.put("X", 1); 
+		rps.put("Y", 2); 
+		rps.put("Z", 3);
+		Map<String, String> beats = new HashMap<>();
+		beats.put("X", "C"); 
+		beats.put("Y", "A"); 
+		beats.put("Z", "B");  
+		Map<String, String> draws = new HashMap<>();
+		draws.put("X", "A"); 
+		draws.put("Y", "B"); 
+		draws.put("Z", "C");  
+		
 		int pts = 0;
 		pts += rps.get(yours);
 		if (beats.get(yours).equals(opp)) {
