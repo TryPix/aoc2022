@@ -11,7 +11,7 @@ public class AOC9 {
 	
 	public static int visited(File input, int ropeSize) throws FileNotFoundException {
 		
-		List<List<Integer>> coordinates = parseInput(input); // x and y coordinates of head
+		List<List<Integer>> coordinates = parseInput(input); // x and y coordinates of the head
 		List<Integer> allX = coordinates.get(0);  
 		List<Integer> allY = coordinates.get(1);
 		
