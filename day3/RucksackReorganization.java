@@ -19,11 +19,11 @@ public class RucksackReorganization {
 	static int prioritySum(File input, boolean part2) throws FileNotFoundException{
 		
 		String[] letters = new String[] {"a", "b", "c", "d", "e",
-										 "f", "g", "h", "i", "j",
-										 "k", "l", "m", "n", "o",
-										 "p", "q", "r", "s", "t",
-										 "u", "v", "w", "x", "y",
-										 "z"};
+						 "f", "g", "h", "i", "j",
+						 "k", "l", "m", "n", "o",
+						 "p", "q", "r", "s", "t",
+						 "u", "v", "w", "x", "y",
+						 "z"};
 		
 		HashMap<String, Integer> values = new HashMap<String, Integer>();
 		for (int i = 0; i < 26; i++) {
