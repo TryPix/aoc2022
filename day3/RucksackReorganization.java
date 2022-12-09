@@ -1,20 +1,22 @@
+package day3;
 
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.HashMap;
+import java.util.*;
+import java.io.*;
 
-public class AOC3 {
+public class RucksackReorganization {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		// TODO Auto-generated method stub
 		
-		System.out.println(prioritySum(new File("aoc3.txt")));
+		File in = new File("day3/input.txt");
+		
+		System.out.println("Part 1: " + prioritySum(in, false));
+		System.out.println("Part 2: " + prioritySum(in, true));
 
 	}
 	
-	static int prioritySum(File input) throws FileNotFoundException{
+	
+	static int prioritySum(File input, boolean part2) throws FileNotFoundException{
 		
 		String[] letters = new String[] {"a", "b", "c", "d", "e",
 										 "f", "g", "h", "i", "j",
@@ -27,57 +29,67 @@ public class AOC3 {
 		for (int i = 0; i < 26; i++) {
 			values.put(letters[i], i+1);
 		}
-
+		
+		int count = 0; int count2 = 0;
+		
 		Scanner scan = new Scanner(input);
 		
-		int count = 0;
+		while (scan.hasNextLine()) {
+			String line = scan.nextLine();
+			count += rep1(line, letters, values);
+		}
+		
+		scan.close();
+		scan = new Scanner(input);
 		
 		while(scan.hasNextLine()) {
 			String first = scan.nextLine();
 			String second = scan.nextLine();
 			String third = scan.nextLine();
-			for (int i = 0; i < letters.length; i++) {
-				if (first.contains(letters[i]) && second.contains(letters[i]) && third.contains(letters[i])) {
-					count += values.get(letters[i]);
-					break;
-				}
-				if (first.contains(letters[i].toUpperCase()) && second.contains(letters[i].toUpperCase()) && third.contains(letters[i].toUpperCase())) {
-					count += values.get(letters[i]) + 26;
-					break;
-				}
-			}
-			
-			
+			count2 += rep2(first, second, third, letters, values);
 		}
-		
-		
-// PART I
-		
-//		while (scan.hasNextLine()) {
-//			String a = scan.nextLine();
-//			String first = a.substring(0, a.length()/2);
-//			String last = a.substring(a.length()/2, a.length());
-//			for (int i = 0; i < letters.length; i++) {
-//				if (first.contains(letters[i]) && last.contains(letters[i])) {
-//					count += values.get(letters[i]);
-//					break;
-//				}
-//				
-//				if (first.contains(letters[i].toUpperCase()) && last.contains(letters[i].toUpperCase())) {
-//					count += values.get(letters[i]) + 26;
-//					break;
-//				}
-//			}
-//			
-//			
-//			//System.out.println(count);
-//		}
-		
 		scan.close();
 		
-		
+		if (part2) {
+			return count2;
+		}
 		
 		return count;
+	}
+
+	
+	public static int rep1(String a, String[] letters, Map<String, Integer> values) {
+		int count = 0;
+		String first = a.substring(0, a.length()/2);
+		String last = a.substring(a.length()/2, a.length());
+		for (int i = 0; i < letters.length; i++) {
+			if (first.contains(letters[i]) && last.contains(letters[i])) {
+				count += values.get(letters[i]);
+				break;
+			}
+			
+			if (first.contains(letters[i].toUpperCase()) && last.contains(letters[i].toUpperCase())) {
+				count += values.get(letters[i]) + 26;
+				break;
+			}
+		}
+		return count;
+	}
+	
+	
+	public static int rep2(String first, String second, String third, String[]letters, Map<String, Integer> values) {
+		int count2 = 0;
+		for (int i = 0; i < letters.length; i++) {
+			if (first.contains(letters[i]) && second.contains(letters[i]) && third.contains(letters[i])) {
+				count2 += values.get(letters[i]);
+				break;
+			}
+			if (first.contains(letters[i].toUpperCase()) && second.contains(letters[i].toUpperCase()) && third.contains(letters[i].toUpperCase())) {
+				count2 += values.get(letters[i]) + 26;
+				break;
+			}
+		}
+		return count2;
 	}
 
 }
