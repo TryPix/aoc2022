@@ -105,81 +105,76 @@ public class AOC9 {
 			if (hx - tx == 2 && hy == ty) {
 				tx++;
 			}
-			if (hx - tx == -2 && hy == ty) {
+			else if (hx - tx == -2 && hy == ty) {
 				tx--;
 			} 
-			if (hy - ty == 2 && hx == tx) {
+			else if (hy - ty == 2 && hx == tx) {
 				ty++;
 			}
-			if (hy - ty == -2 && hx == tx) {
+			else if (hy - ty == -2 && hx == tx) {
 				ty--;
 			}
 			
-			if (hy - ty == -2 && hx - tx == 1) { // up right
+			else if (hy - ty == -2 && hx - tx == 1) { // up right
 				tx++;
 				ty--;
 			}
-			if (hy - ty == -2 && hx - tx == -1) { // up left
+			else if (hy - ty == -2 && hx - tx == -1) { // up left
 				tx--;
 				ty--;
 			}
 			
-			if (hy - ty == 2 && hx - tx == 1) { // down right
+			else if (hy - ty == 2 && hx - tx == 1) { // down right
 				tx++;
 				ty++;
 			}
 			
-			if (hy - ty == 2 && hx - tx == -1) { // down left
+			else if (hy - ty == 2 && hx - tx == -1) { // down left
 				tx--;
 				ty++;
 			}
 			
-			if (hx - tx == 2 && hy - ty == -1) {
+			else if (hx - tx == 2 && hy - ty == -1) {
 				tx++;
 				ty--;
 			}
-			if (hx - tx == -2 && hy - ty == -1) {
+			else if (hx - tx == -2 && hy - ty == -1) {
 				tx--;
 				ty--;
 			}
 			
-			if (hx - tx == 2 && hy - ty == 1) {
+			else if (hx - tx == 2 && hy - ty == 1) {
 				tx++;
 				ty++;
 			}
 			
-			if (hx - tx == -2 && hy - ty == 1) {
+			else if (hx - tx == -2 && hy - ty == 1) {
 				tx--;
 				ty++;
 			}
 
-			// PART II tests: tails can move diagonally - these tests never pass in part I
-			if (hx - tx == 2 && hy - ty == -2) {
+			// PART II tests: links can move diagonally - these tests never pass in part I
+			else if (hx - tx == 2 && hy - ty == -2) {
 				tx++;
 				ty--;
 			}
 			
-			if (hx - tx == -2 && hy - ty == -2) {
+			else if (hx - tx == -2 && hy - ty == -2) {
 				tx--;
 				ty--;
 			}
 			
-			if (hx - tx == 2 && hy - ty == 2) {
+			else if (hx - tx == 2 && hy - ty == 2) {
 				tx++;
 				ty++;
 			}
 			
-			if (hx - tx == -2 && hy - ty == 2) {
+			else if (hx - tx == -2 && hy - ty == 2) {
 				tx--;
 				ty++;
 			}
-			
-			List<Integer> pos = new ArrayList<>();
-			pos.add(tx);
-			pos.add(ty);
-		
 
-		return pos;
+		return new ArrayList<>(Arrays.asList(tx, ty));
 	}
 
 }
