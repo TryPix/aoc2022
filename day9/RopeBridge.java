@@ -21,7 +21,7 @@ public class RopeBridge {
 		
 		Set<List<Integer>> posT = new HashSet<>(Arrays.asList()); // positions visited at least once
 		
-		List<List<Integer>> positions = new ArrayList<>(); // positions of each link in the rope at each step
+		List<List<Integer>> positions = new ArrayList<>(); // positions of each link in the rope, at each step
 		
 		for (int i = 0; i < 10; i++) {
 			positions.add(new ArrayList<Integer>(Arrays.asList(0, 0))); // initial positions
