@@ -2,7 +2,7 @@
 import java.io.*;
 import java.util.*;
 
-public class AocTemplate {
+public class AOC10 {
 	public static void main(String[] args) throws FileNotFoundException  {
 		
 		File in = new File("day/input.txt");
