@@ -166,7 +166,6 @@ class Monkey{
 		} else {
 			items.set(0, items.get(0) * n);
 		}
-		//items.set(0, items.get(0)/3); // PART I
 	}
 	
 	boolean test() {
