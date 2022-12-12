@@ -151,7 +151,6 @@ public class HillClimbing {
 		for (int i = 0; i < nRows;i++) {
 			for (int j = 0; j < nCols; j++) {
 				vgrid[i][j] = new Vertex();	
-				vgrid[i][j].charVal = map[i][j];
 			}
 		}
 		
@@ -193,23 +192,10 @@ public class HillClimbing {
 
 class Vertex{
 	ArrayList<Vertex> adj = new ArrayList<Vertex>();
-	int charVal;
 	boolean visited;
 	int prevd;
 	int d;
 	Vertex prev;
-	Vertex(){
-		
-	}
-	
-	Vertex(ArrayList<Vertex> adj){
-		this.adj = adj;
-		System.out.println(adj);
-	}
-	
-	void printAdj() {
-		System.out.println(adj);
-	}
 }
 	
 
